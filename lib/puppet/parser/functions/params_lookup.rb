@@ -72,6 +72,6 @@ If no value is found in the defined sources, it returns an empty string ('')
       return value if (not value.nil?) && (value != :undefined) && (value != '')
     end
 
-    return ''
+    return nil
   end
 end
