@@ -5,7 +5,7 @@
 #
 module Puppet::Parser::Functions
   newfunction(:any2bool, :type => :rvalue, :doc => <<-EOS
-This converts any input to a boolean. This attempt to convert strings that 
+This converts any input to a boolean. This attempt to convert strings that
 contain things like: y, 1, t, true to 'true' and strings that contain things
 like: 0, f, n, false, no to 'false'.
     EOS
@@ -33,8 +33,7 @@ like: 0, f, n, false, no to 'false'.
       when /^(1|t|y|true|yes)$/  then true
       when /^(0|f|n|false|no)$/  then false
       when /^(undef|undefined)$/ then false # This is not likely to happen ...
-      else
-        raise(Puppet::ParseError, 'any2bool(): Unknown type of boolean given')
+      else false
     end
 
     return result
